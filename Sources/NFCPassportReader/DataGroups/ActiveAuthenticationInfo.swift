@@ -7,7 +7,7 @@
 
 import Foundation
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class ActiveAuthenticationInfo : SecurityInfo {
 
     var oid : String

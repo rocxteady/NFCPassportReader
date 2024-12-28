@@ -171,7 +171,7 @@ public func unpad( _ tounpad : [UInt8]) -> [UInt8] {
     }
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func mac(algoName: SecureMessagingSupportedAlgorithms, key : [UInt8], msg : [UInt8]) -> [UInt8] {
     if algoName == .DES {
         return desMAC(key: key, msg: msg)
@@ -180,7 +180,7 @@ public func mac(algoName: SecureMessagingSupportedAlgorithms, key : [UInt8], msg
     }
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func desMAC(key : [UInt8], msg : [UInt8]) -> [UInt8]{
     
     let size = msg.count / 8
@@ -206,20 +206,20 @@ public func desMAC(key : [UInt8], msg : [UInt8]) -> [UInt8]{
     return a
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func aesMAC( key: [UInt8], msg : [UInt8] ) -> [UInt8] {
     let mac = OpenSSLUtils.generateAESCMAC( key: key, message:msg )
     return mac
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func wrapDO( b : UInt8, arr : [UInt8] ) -> [UInt8] {
     let tag = TKBERTLVRecord(tag: TKTLVTag(b), value: Data(arr))
     let result = [UInt8](tag.data)
     return result;
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func unwrapDO( tag : UInt8, wrappedData : [UInt8]) throws -> [UInt8] {
     guard let rec = TKBERTLVRecord(from: Data(wrappedData)),
           rec.tag == tag else {
@@ -247,7 +247,7 @@ public func intToBytes( val: Int, removePadding:Bool) -> [UInt8] {
     return data
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func oidToBytes(oid : String, replaceTag : Bool) -> [UInt8] {
     var encOID = OpenSSLUtils.asn1EncodeOID(oid: oid)
     
@@ -277,12 +277,12 @@ public func oidToBytes(oid : String, replaceTag : Bool) -> [UInt8] {
 /// @return: A tuple with the decoded hexa length and the length of the asn.1 encoded value.
 /// @raise asn1Exception: If the parameter does not follow the asn.1 notation.
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func asn1Length( _ data: ArraySlice<UInt8> ) throws -> (Int, Int) {
     return try asn1Length( Array(data) )
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func asn1Length(_ data : [UInt8]) throws -> (Int, Int)  {
     if data[0] < 0x80 {
         return (Int(binToHex(data[0])), 1)
@@ -305,7 +305,7 @@ public func asn1Length(_ data : [UInt8]) throws -> (Int, Int)  {
 /// @return: The asn.1 encoded value
 /// @rtype: A binary string
 /// @raise asn1Exception: If the parameter is too big, must be >= 0 and <= FFFF
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func toAsn1Length(_ data : Int) throws -> [UInt8] {
     if data < 0x80 {
         return hexRepToBin(String(format:"%02x", data))
@@ -327,7 +327,7 @@ public func toAsn1Length(_ data : Int) throws -> [UInt8] {
 /// @param hashAlgorithm: the hash algorithm to be used - supported ones are SHA1, SHA224, SHA256, SHA384 and SHA512
 ///        Currently specifying any others return empty array
 /// @return: A hash of the data
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func calcHash( data: [UInt8], hashAlgorithm: String ) throws -> [UInt8] {
     var ret : [UInt8] = []
     
@@ -353,7 +353,7 @@ public func calcHash( data: [UInt8], hashAlgorithm: String ) throws -> [UInt8] {
 /// This function calculates a SHA1 Hash of the input data
 /// @param data: a byte array of data
 /// @return: A SHA1 hash of the data
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func calcSHA1Hash( _ data: [UInt8] ) -> [UInt8] {
     #if canImport(CryptoKit)
     var sha1 = Insecure.SHA1()
@@ -369,7 +369,7 @@ public func calcSHA1Hash( _ data: [UInt8] ) -> [UInt8] {
 /// This function calculates a SHA224 Hash of the input data
 /// @param data: a byte array of data
 /// @return: A SHA224 hash of the data
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func calcSHA224Hash( _ data: [UInt8] ) -> [UInt8] {
     
     var digest = [UInt8](repeating: 0, count:Int(CC_SHA224_DIGEST_LENGTH))
@@ -383,7 +383,7 @@ public func calcSHA224Hash( _ data: [UInt8] ) -> [UInt8] {
 /// This function calculates a SHA256 Hash of the input data
 /// @param data: a byte array of data
 /// @return: A SHA256 hash of the data
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func calcSHA256Hash( _ data: [UInt8] ) -> [UInt8] {
     #if canImport(CryptoKit)
     var sha256 = SHA256()
@@ -399,7 +399,7 @@ public func calcSHA256Hash( _ data: [UInt8] ) -> [UInt8] {
 /// This function calculates a SHA512 Hash of the input data
 /// @param data: a byte array of data
 /// @return: A SHA512 hash of the data
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func calcSHA512Hash( _ data: [UInt8] ) -> [UInt8] {
     #if canImport(CryptoKit)
     var sha512 = SHA512()
@@ -415,7 +415,7 @@ public func calcSHA512Hash( _ data: [UInt8] ) -> [UInt8] {
 /// This function calculates a SHA384 Hash of the input data
 /// @param data: a byte array of data
 /// @return: A SHA384 hash of the data
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public func calcSHA384Hash( _ data: [UInt8] ) -> [UInt8] {
     #if canImport(CryptoKit)
     var sha384 = SHA384()

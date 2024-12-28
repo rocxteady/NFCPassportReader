@@ -7,7 +7,7 @@
 import Foundation
 import OSLog
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class COM : DataGroup {
     public private(set) var version : String = "Unknown"
     public private(set) var unicodeVersion : String = "Unknown"

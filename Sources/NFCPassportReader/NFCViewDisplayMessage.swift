@@ -7,7 +7,7 @@
 
 import Foundation
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public enum NFCViewDisplayMessage {
     case requestPresentPassport
     case authenticatingWithPassport(Int)
@@ -17,7 +17,7 @@ public enum NFCViewDisplayMessage {
     case successfulRead
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 extension NFCViewDisplayMessage {
     public var description: String {
         switch self {

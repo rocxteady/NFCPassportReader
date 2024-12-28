@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 #endif
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class DataGroup2 : DataGroup {
     public private(set) var nrImages : Int = 0
     public private(set) var versionNumber : Int = 0

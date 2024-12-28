@@ -59,7 +59,7 @@ import OpenSSL
 //     attrValues SET OF AttributeValue }
 // AttributeValue ::= ANY
 // SignatureValue ::= OCTET STRING
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 class SOD : DataGroup {
     
     public private(set) var pkcs7CertificateData : [UInt8] = []

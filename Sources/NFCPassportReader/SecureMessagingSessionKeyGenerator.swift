@@ -9,7 +9,7 @@ import Foundation
 
 import CryptoKit
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 class SecureMessagingSessionKeyGenerator {
     static let NO_PACE_KEY_REFERENCE : UInt8 = 0x00
     enum SMSMode : UInt8 {

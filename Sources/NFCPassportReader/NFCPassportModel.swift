@@ -20,7 +20,7 @@ public enum PassportAuthenticationStatus {
     case failed
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class NFCPassportModel {
     
     public private(set) lazy var documentType : String = { return String( passportDataElements?["5F03"]?.first ?? "?" ) }()

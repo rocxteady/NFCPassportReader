@@ -7,7 +7,7 @@
 import Foundation
 import OpenSSL
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class DataGroup15 : DataGroup {
     
     public private(set) var rsaPublicKey : OpaquePointer?

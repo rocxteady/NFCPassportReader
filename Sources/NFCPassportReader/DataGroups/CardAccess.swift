@@ -12,7 +12,7 @@ import Foundation
 //    protocol OBJECT IDENTIFIER,
 //    requiredData ANY DEFINED BY protocol,
 //    optionalData ANY DEFINED BY protocol OPTIONAL
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class CardAccess {
     private var asn1 : ASN1Item!
     public private(set) var securityInfos : [SecurityInfo] = [SecurityInfo]()

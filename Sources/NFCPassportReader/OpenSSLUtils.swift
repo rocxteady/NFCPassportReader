@@ -10,7 +10,7 @@ import OSLog
 import OpenSSL
 import CryptoTokenKit
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class OpenSSLUtils {
     private static var loaded = false
     
@@ -528,7 +528,7 @@ public class OpenSSLUtils {
         return true
     }
 
-    @available(iOS 13, macOS 10.15, *)
+    @available(macOS 10.15, *)
     static func generateAESCMAC( key: [UInt8], message : [UInt8] ) -> [UInt8] {
         let ctx = CMAC_CTX_new();
         defer { CMAC_CTX_free(ctx) }
@@ -552,7 +552,7 @@ public class OpenSSLUtils {
         return [UInt8](mac[0..<maclen])
     }
     
-    @available(iOS 13, macOS 10.15, *)
+    @available(macOS 10.15, *)
     static func asn1EncodeOID (oid : String) -> [UInt8] {
         
         let obj = OBJ_txt2obj( oid.cString(using: .utf8), 1)
@@ -568,7 +568,7 @@ public class OpenSSLUtils {
         return data
     }
 
-    @available(iOS 13, macOS 10.15, *)
+    @available(macOS 10.15, *)
     public static func getPublicKeyData(from key:OpaquePointer) -> [UInt8]? {
         var data : [UInt8] = []
         // Get Key type
@@ -604,7 +604,7 @@ public class OpenSSLUtils {
     }
     
     // Caller is responsible for freeing the key
-    @available(iOS 13, macOS 10.15, *)
+    @available(macOS 10.15, *)
     public static func decodePublicKeyFromBytes(pubKeyData: [UInt8], params: OpaquePointer) -> OpaquePointer? {
         var pubKey : OpaquePointer?
         

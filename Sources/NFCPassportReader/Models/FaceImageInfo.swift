@@ -25,6 +25,7 @@ public struct FaceImageInfo: Equatable {
     let imageDataType: ImageDataType?
     let sourceType: SourceType?
     
+    @available(macOS 10.15, *)
     internal static func from(dg2: DataGroup2) -> FaceImageInfo {
         return FaceImageInfo(
             expression: Expression.from(dg2.expression),

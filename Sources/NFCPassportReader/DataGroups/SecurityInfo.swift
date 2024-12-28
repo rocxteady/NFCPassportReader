@@ -8,7 +8,7 @@
 import Foundation
 import OpenSSL
 
-@available(iOS 13, macOS 10.15,*)
+@available(macOS 10.15,*)
 public class SecurityInfo {
     // Active Authentication OID
     static let ID_AA_OID = "2.23.136.1.1.5"

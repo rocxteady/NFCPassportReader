@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 #endif
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class DataGroup7 : DataGroup {
     
     public private(set) var imageData : [UInt8] = []

@@ -26,7 +26,7 @@ public enum PACEMappingType {
     }
 }
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class PACEInfo : SecurityInfo {
     
     // Standardized domain parameters. Based on Table 6.

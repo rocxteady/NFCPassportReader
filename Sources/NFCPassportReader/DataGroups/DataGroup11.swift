@@ -6,7 +6,7 @@
 
 import Foundation
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class DataGroup11 : DataGroup {
     
     public private(set) var fullName : String?

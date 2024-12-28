@@ -8,7 +8,6 @@
 
 #if !os(macOS)
 
-@available(iOS 13, *)
 public struct ResponseAPDU {
     
     public var data : [UInt8]

@@ -8,7 +8,7 @@
 import Foundation
 import OpenSSL
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class ASN1Item : CustomDebugStringConvertible {
     var pos : Int = -1
     var depth : Int = -1
@@ -81,7 +81,7 @@ public class ASN1Item : CustomDebugStringConvertible {
 
 /// Very very basic ASN1 parser class - uses OpenSSL to dump an ASN1 structure to a string, and then parses that out into
 /// a tree based hieracy of ASN1Item structures - depth based
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class SimpleASN1DumpParser {
     public init() {
         

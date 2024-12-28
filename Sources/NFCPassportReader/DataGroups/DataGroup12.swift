@@ -6,7 +6,7 @@
 
 import Foundation
 
-@available(iOS 13, macOS 10.15, *)
+@available(macOS 10.15, *)
 public class DataGroup12 : DataGroup {
     public private(set) var issuingAuthority : String?
     public private(set) var dateOfIssue : String?
