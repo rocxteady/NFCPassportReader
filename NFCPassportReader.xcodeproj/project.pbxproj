@@ -7,23 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB2E9FF02D341A6F00BB49C8 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD2E68B2D341799001CACEF /* OpenSSL.xcframework */; };
-		EB2E9FF12D341A6F00BB49C8 /* OpenSSL.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBD2E68B2D341799001CACEF /* OpenSSL.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EB69246E2D35743200FE06A9 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBD2E68B2D341799001CACEF /* OpenSSL.xcframework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		EB2E9FF22D341A6F00BB49C8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EB2E9FF12D341A6F00BB49C8 /* OpenSSL.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EBD2E62D2D341771001CACEF /* NFCPassportReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NFCPassportReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB2E9FF02D341A6F00BB49C8 /* OpenSSL.xcframework in Frameworks */,
+				EB69246E2D35743200FE06A9 /* OpenSSL.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +94,6 @@
 				EBD2E6292D341771001CACEF /* Sources */,
 				EBD2E62A2D341771001CACEF /* Frameworks */,
 				EBD2E62B2D341771001CACEF /* Resources */,
-				EB2E9FF22D341A6F00BB49C8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,7 +180,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
@@ -233,7 +216,6 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;

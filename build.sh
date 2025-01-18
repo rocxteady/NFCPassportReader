@@ -14,7 +14,8 @@ xcodebuild archive \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     SWIFT_TREAT_WARNINGS_AS_ERRORS=NO \
-    OTHER_SWIFT_FLAGS="-no-verify-emitted-module-interface"
+    OTHER_SWIFT_FLAGS="-no-verify-emitted-module-interface" \
+    CODE_SIGNING_ALLOWED=NO
 
 # Archive for iOS Simulator
 xcodebuild archive \
@@ -26,7 +27,8 @@ xcodebuild archive \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     SWIFT_TREAT_WARNINGS_AS_ERRORS=NO \
-    OTHER_SWIFT_FLAGS="-no-verify-emitted-module-interface"
+    OTHER_SWIFT_FLAGS="-no-verify-emitted-module-interface" \
+    CODE_SIGNING_ALLOWED=NO
 
 # Create XCFramework
 xcodebuild -create-xcframework \

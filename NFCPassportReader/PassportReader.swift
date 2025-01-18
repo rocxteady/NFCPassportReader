@@ -129,14 +129,7 @@ extension PassportReader : NFCTagReaderSessionDelegate {
             var userError = NFCPassportReaderError.UnexpectedError
             if let readerError = error as? NFCReaderError {
                 Log.error( "tagReaderSession:didInvalidateWithError - Got NFCReaderError - \(readerError.localizedDescription)" )
-                switch (readerError.code) {
-                case NFCReaderError.readerSessionInvalidationErrorUserCanceled:
-                    Log.error( "     - User cancelled session" )
-                    userError = NFCPassportReaderError.UserCanceled
-                default:
-                    Log.error( "     - some other error - \(readerError.localizedDescription)" )
-                    userError = NFCPassportReaderError.UnexpectedError
-                }
+                userError = NFCPassportReaderError.system(readerError)
             } else {
                 Log.error( "tagReaderSession:didInvalidateWithError - Received error - \(error.localizedDescription)" )
             }
