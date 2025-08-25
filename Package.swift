@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "NFCPassportReader",
-    platforms: [.iOS("15.0")],
+    platforms: [.iOS("14.0")],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -15,7 +15,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/krzyzanowskim/OpenSSL.git", .upToNextMinor(from: "1.1.2300"))
+        .package(name: "OpenSSL", path: "OpenSSL")
 
     ],
     targets: [
