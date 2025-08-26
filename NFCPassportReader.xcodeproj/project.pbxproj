@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBB7D8352E5CFB2600B34A71 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB7D8342E5CFB2600B34A71 /* OpenSSL.xcframework */; };
+		EBB7D83C2E5DCDA300B34A71 /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBB7D8342E5CFB2600B34A71 /* OpenSSL.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB7D8352E5CFB2600B34A71 /* OpenSSL.xcframework in Frameworks */,
+				EBB7D83C2E5DCDA300B34A71 /* OpenSSL.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
